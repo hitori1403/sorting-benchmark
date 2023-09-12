@@ -8,10 +8,10 @@ This project is to measure the execution time of Quicksort, Heapsort, Mergesort 
 
 The first two test cases are increasing array and decreasing array. The others are random array.
 
-### Table of execution time (ms):
+### Table of execution time (ms)
 
 | Test case | Quicksort | Heapsort  | Mergesort | C++ STL Sort
-|-----------|-----------|-----------|-----------|--------------
+|:---------:|-----------|-----------|-----------|-------------
 | 0         | 25.866    | 45.755    | 19.35     | 7.899
 | 1         | 25.142    | 52.578    | 25.59     | 5.419
 | 2         | 71.166    | 139.09    | 81.071    | 50.646
@@ -39,7 +39,7 @@ The first two test cases are increasing array and decreasing array. The others a
 | Mergesort    | 20597831400  | 2276122
 | C++ STL Sort | 17847756639  | 881949
 
-### This benchmarking is run on:
+### This benchmarking is run on
 * **OS**: Gentoo/Linux x86_64
 * **Kernel**: Kernel: 5.15.23-gentoo-dist
 * **CPU**: AMD Ryzen 5 5600H with Radeon Graphics (12) @ 3.300GHz
@@ -163,7 +163,7 @@ Performance counter stats for './benchmark --quicksort':
     0.020004000 seconds sys
 ```
 
-# References:
+# References
 
 * [heap-quick-comparison.pdf](https://orbi.uliege.be/bitstream/2268/19656/1/heap-quick-comparison.pdf)
 * [Memory location matters for performance](https://pythonspeed.com/articles/performance-memory-locality/)
