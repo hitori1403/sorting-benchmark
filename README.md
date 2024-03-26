@@ -40,13 +40,37 @@ The first two test cases are increasing array and decreasing array. The others a
 | C++ STL Sort | 17847756639  | 881949
 
 ### This benchmarking is run on
-* **OS**: Gentoo/Linux x86_64
-* **Kernel**: Kernel: 5.15.23-gentoo-dist
-* **CPU**: AMD Ryzen 5 5600H with Radeon Graphics (12) @ 3.300GHz
-* **GPU**: AMD ATI Radeon RX 5500/5500M / Pro 5500M
-* **GPU**: AMD ATI 07:00.0 Cezanne
-* **Memory**: 8GB DDR4
-* **g++ version**: (Gentoo 11.2.1_p20220115 p4) 11.2.1
+
+<table>
+    <tr>
+        <th>OS</th>
+        <td>Gentoo/Linux x86_64</td>
+    </tr>
+    <tr>
+        <th>Kernel</th>
+        <td>5.15.23-gentoo-dist</td>
+    </tr>
+    <tr>
+        <th>CPU</th>
+        <td>AMD Ryzen 5 5600H with Radeon Graphics (12) @ 3.300GHz</td>
+    </tr>
+    <tr>
+        <th>GPU1</th>
+        <td>AMD ATI Radeon RX 5500/5500M / Pro 5500M</td>
+    </tr>
+    <tr>
+        <th>GPU2</th>
+        <td>AMD ATI Radeon Vega Series / Radeon Vega Mobile Series</td>
+    </tr>
+    <tr>
+        <th>Memory</th>
+        <td>8GB DDR4</td>
+    </tr>
+    <tr>
+        <th>g++</th>
+        <td>(Gentoo 11.2.1_p20220115 p4) 11.2.1</td>
+    </tr>
+</table>
 
 According to those infomations above we can easily realize that `std::sort` of C++ STL is far better than its opponents.
 
@@ -74,16 +98,16 @@ When both algorithms have same complexity (`α*N*log(N)` for the Quicksort, and 
 
 Clone the project and build it:
 
-```
-$ git clone https://github.com/woanmeo11/sorting-benchmark.git
-$ cd sorting-benchmark
-$ ./build.sh
+```bash
+git clone https://github.com/woanmeo11/sorting-benchmark.git
+cd sorting-benchmark
+./build.sh
 ```
 
 To display help, run the binary without any arguments:
 
-```
-$ ./benchmark
+```bash
+./benchmark
 Usage: benchmark [OPTION]...
 Measure execution time of common sorting algorithms.
 
@@ -98,8 +122,8 @@ Measure execution time of common sorting algorithms.
 
 Then run `benchmark --gentests` to generate test cases:
 
-```
-$ ./benchmark --gentests
+```bash
+./benchmark --gentests
 [*] Creating directory...
 [*] Generating test case 0...
 [*] Generating test case 1...
@@ -117,8 +141,8 @@ $ ./benchmark --gentests
 
 Run `benchmark --all` to view the benchmarking progress:
 
-```
-$ ./benchmark --all
+```bash
+./benchmark --all
 │ Test case │ Quicksort │ Heapsort  │ Mergesort │ C++ STL Sort
 ├───────────┼───────────┼───────────┼───────────┼──────────────
 │ 0         │ 25.866    │ 45.755    │ 19.35     │ 7.899
@@ -137,8 +161,8 @@ $ ./benchmark --all
 
 To view the number of instructions and cache-misses, we use a tool called `perf`. `--quicksort` option is used to investigate only Quicksort algorithm.
 
-```
-$ perf stat -e instructions,cache-misses ./benchmark --quicksort
+```bash
+perf stat -e instructions,cache-misses ./benchmark --quicksort
 │ Test case │ Quicksort
 ├───────────┼───────────
 │ 0         │ 24.092
